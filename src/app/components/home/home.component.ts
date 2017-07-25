@@ -15,7 +15,7 @@ import { ClientesService } from './../../services/clientes/clientes.service';
               <button class="btn btn-primary" [class.active]="isActive">Guardar</button>
               <button class="btn" [style.backgroundColor]="isActive ? 'blue' : 'white' ">Guardar</button>
               <button class="btn btn-info" (click)="alertar($event)">Alertar</button>
-              <input (keyup.enter)="onEnterPresionado()"/>`
+              <input #usuario (keyup.enter)="onEnterPresionado(usuario.value)"/>`
 })
 export class HomeComponent{
     nombre: string = 'Home';
@@ -23,8 +23,8 @@ export class HomeComponent{
     banner: string = 'http://lorempixel.com/728/90/';
     isActive: boolean = true;
 
-    onEnterPresionado(){
-        console.log('ENTER fue presionado.');
+    onEnterPresionado(usuario:string){
+        console.log('ENTER fue presionado, el nombre ingresado es:'+usuario);
     }
 
     alertar($event){
