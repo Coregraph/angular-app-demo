@@ -13,13 +13,19 @@ import { ClientesService } from './../../services/clientes/clientes.service';
                 </li>
               </ul>
               <button class="btn btn-primary" [class.active]="isActive">Guardar</button>
-              <button class="btn" [style.backgroundColor]="isActive ? 'blue' : 'white' ">Guardar</button>`
+              <button class="btn" [style.backgroundColor]="isActive ? 'blue' : 'white' ">Guardar</button>
+              <button class="btn btn-info" (click)="alertar($event)">Alertar</button>`
 })
 export class HomeComponent{
     nombre: string = 'Home';
     clientes: string[];
     banner: string = 'http://lorempixel.com/728/90/';
     isActive: boolean = true;
+
+    alertar($event){
+        alert('Hola');
+        console.log($event);
+    }
 
     constructor(service:ClientesService){
         this.clientes = service.getClientes();
