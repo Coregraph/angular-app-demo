@@ -12,7 +12,8 @@ import { ClientesService } from './../../services/clientes/clientes.service';
                   {{ cliente }}
                 </li>
               </ul>
-              <button class="btn btn-primary" [class.active]="isActive">Guardar</button>`
+              <button class="btn btn-primary" [class.active]="isActive">Guardar</button>
+              <button class="btn" [style.backgroundColor]="isActive ? 'blue' : 'white' ">Guardar</button>`
 })
 export class HomeComponent{
     nombre: string = 'Home';
