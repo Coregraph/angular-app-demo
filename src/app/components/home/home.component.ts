@@ -15,16 +15,17 @@ import { ClientesService } from './../../services/clientes/clientes.service';
               <button class="btn btn-primary" [class.active]="isActive">Guardar</button>
               <button class="btn" [style.backgroundColor]="isActive ? 'blue' : 'white' ">Guardar</button>
               <button class="btn btn-info" (click)="alertar($event)">Alertar</button>
-              <input #usuario (keyup.enter)="onEnterPresionado(usuario.value)"/>`
+              <input [(ngModel)]="usuario" (keyup.enter)="onEnterPresionado(usuario.value)"/>`
 })
 export class HomeComponent{
     nombre: string = 'Home';
     clientes: string[];
     banner: string = 'http://lorempixel.com/728/90/';
     isActive: boolean = true;
+    usuario: string = 'Carlos';
 
-    onEnterPresionado(usuario:string){
-        console.log('ENTER fue presionado, el nombre ingresado es:'+usuario);
+    onEnterPresionado(){
+        console.log('ENTER fue presionado, el nombre ingresado es:'+this.usuario);
     }
 
     alertar($event){
