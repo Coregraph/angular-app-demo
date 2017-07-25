@@ -3,10 +3,14 @@ import {Component} from '@angular/core';
 @Component({
     selector: 'wo-app-home', //<wo-app-home>
     template: `<h2>Yo soy {{ 'Componente:' + this.nombre }}</h2>
-              <p>Creado el {{ queDiaEsHoy() }}</p>`
+              <p>Creado el {{ queDiaEsHoy() }}</p>
+              <ul>
+                <li *ngFor="let cliente of clientes">{{ cliente }}</li>
+              </ul>`
 })
 export class HomeComponent{
     nombre: string = 'Home';
+    clientes: string[] = ['Hugo','Paco','Luis'];
 
     constructor(){
     }
