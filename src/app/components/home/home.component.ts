@@ -11,12 +11,14 @@ import { ClientesService } from './../../services/clientes/clientes.service';
                 <li *ngFor="let cliente of clientes">
                   {{ cliente }}
                 </li>
-              </ul>`
+              </ul>
+              <button class="btn btn-primary" [class.active]="isActive">Guardar</button>`
 })
 export class HomeComponent{
     nombre: string = 'Home';
     clientes: string[];
     banner: string = 'http://lorempixel.com/728/90/';
+    isActive: boolean = true;
 
     constructor(service:ClientesService){
         this.clientes = service.getClientes();
