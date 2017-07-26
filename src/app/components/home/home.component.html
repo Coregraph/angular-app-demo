@@ -1,7 +1,10 @@
-<div *ngIf="clientes.length > 0; then conClientes else sinClientes"></div>
-<ng-template #conClientes>  
-  Lista de Clientes.
-</ng-template>
-<ng-template #sinClientes>
-  No hay Clientes.
-</ng-template>
+<ul class="nav nav-pills">
+  <li [class.active]="modoVista == 'mapa'"><a (click)="modoVista = 'mapa'">Ver Mapa</a></li>
+  <li [class.active]="modoVista == 'lista'"><a (click)="modoVista = 'lista'">Ver Lista</a></li>
+</ul>
+<div [ngSwitch]="modoVista">
+  <div *ngSwitchCase="'mapa'">Vista de Mapa</div>
+  <div *ngSwitchCase="'lista'">Vista de Lista</div>
+  <div *ngSwitchDefault>Ninguno de los dos.</div>
+</div>
+
