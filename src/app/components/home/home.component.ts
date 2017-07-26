@@ -6,15 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.sass']
 })
 export class HomeComponent implements OnInit {
-  post = {
-    titulo: 'Hola soy un post',
-    favorito: true
-  }
-
-  cambioFavorito(fav: boolean){
-    console.log('Cambio el favorito a:'+fav);
-  }
-
   constructor() { }
 
   ngOnInit() {
