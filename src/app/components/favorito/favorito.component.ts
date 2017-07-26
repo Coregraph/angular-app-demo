@@ -7,11 +7,11 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class FavoritoComponent implements OnInit {
   @Input('esFavorito') esSelecionado: boolean;
-  @Output() change = new EventEmitter();
+  @Output('change') click = new EventEmitter();
 
   onClick(){
     this.esSelecionado = !this.esSelecionado;
-    this.change.emit(this.esSelecionado);
+    this.click.emit(this.esSelecionado);
   }
 
   constructor() { 
