@@ -11,6 +11,10 @@ export class HomeComponent implements OnInit {
     favorito: true
   }
 
+  cambioFavorito(){
+    console.log('Cambio el favorito');
+  }
+
   constructor() { }
 
   ngOnInit() {

@@ -1,4 +1,4 @@
 <h2> 
   {{post.titulo}} 
-  <wo-app-favorito [esFavorito]="post.favorito"></wo-app-favorito>
+  <wo-app-favorito [esFavorito]="post.favorito" (change)="cambioFavorito()"></wo-app-favorito>
 </h2>
