@@ -1,0 +1,6 @@
+<div *ngIf="clientes.length > 0; else sinClientes">
+  Lista de Clientes.
+</div>
+<ng-template #sinClientes>
+  No hay Clientes.
+</ng-template>
