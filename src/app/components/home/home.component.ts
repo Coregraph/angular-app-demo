@@ -11,8 +11,8 @@ export class HomeComponent implements OnInit {
     favorito: true
   }
 
-  cambioFavorito(){
-    console.log('Cambio el favorito');
+  cambioFavorito(fav: boolean){
+    console.log('Cambio el favorito a:'+fav);
   }
 
   constructor() { }

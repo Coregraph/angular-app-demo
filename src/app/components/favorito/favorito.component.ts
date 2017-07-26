@@ -11,7 +11,7 @@ export class FavoritoComponent implements OnInit {
 
   onClick(){
     this.esSelecionado = !this.esSelecionado;
-    this.change.emit();
+    this.change.emit(this.esSelecionado);
   }
 
   constructor() { 
