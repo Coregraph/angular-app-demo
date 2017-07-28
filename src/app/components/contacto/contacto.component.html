@@ -1,4 +1,4 @@
-<form class="">
+<form #f="ngForm" (ngSubmit)="enviar(f)">
   <div class="form-group">
     <label for="nombre">Nombre: </label>
     <input ngModel name="nombre" #nombre="ngModel" 
@@ -14,5 +14,21 @@
     <label for="comentario">Comentario: </label>
     <textarea ngModel name="comentario" id="comentario" cols="30" rows="10" class="form-control"></textarea>
   </div>
-  <button class="btn btn-primary">Enviar</button>
+  <div class="form-group">
+    <div class="checkbox">
+      <label for="subscribir">
+        <input type="checkbox" ngModel name="subscribir"> Subscribir a la lista de correo.
+      </label>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="modoContacto">Modo de Contacto</label>
+    <select ngModel name="modoContacto" id="modoContacto" class="form-control">
+      <option *ngFor="let modo of modosContactos" [ngValue]="modo">{{modo.tipo}}</option>
+    </select>
+  </div>
+  <p>
+    {{f.value | json}}
+  </p>
+  <button [disabled]="f.valid" class="btn btn-primary">Enviar</button>
 </form>

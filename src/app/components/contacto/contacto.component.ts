@@ -6,9 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contacto.component.sass']
 })
 export class ContactoComponent implements OnInit {
-  
+  modosContactos = [
+    {id:1, tipo:'Email'},
+    {id:2, tipo:'Celular'},
+    {id:3, tipo:'SMS'},
+    {id:4, tipo:'Llamada a un amigo'}
+  ]
+
+  enviar(f){
+    console.log(f.value);
+  }
+
   log(x){
-    console.log(x);
+    //console.log(x);
   }
 
   constructor() { }
