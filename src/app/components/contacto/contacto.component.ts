@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contacto.component.sass']
 })
 export class ContactoComponent implements OnInit {
+  
+  log(x){
+    console.log(x);
+  }
 
   constructor() { }
 
