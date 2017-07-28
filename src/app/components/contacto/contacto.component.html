@@ -27,6 +27,13 @@
       <option *ngFor="let modo of modosContactos" [ngValue]="modo">{{modo.tipo}}</option>
     </select>
   </div>
+  <div class="form-group">
+    <div *ngFor="let modo of modosContactos" class="radio">
+      <label for="modoRadio"><input ngModel type="radio" name="modoRadio" [value]="modo.id">
+        {{modo.tipo}}
+      </label>
+    </div>
+  </div>
   <p>
     {{f.value | json}}
   </p>
